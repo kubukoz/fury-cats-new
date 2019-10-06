@@ -133,8 +133,11 @@ schemas	default	id	default
 							hidden	false
 						after	
 						params	
-						sources	kind-projector:src/main/scala	kind-projector:src/main/scala
-						binaries	
+						sources	
+						binaries	org.typelevel:kind-projector_2.12:0.10.3	binRepo	central
+								group	org.typelevel
+								artifact	kind-projector_2.12
+								version	0.10.3
 						resources	
 						bloopSpec	None
 						environment	
@@ -159,8 +162,11 @@ schemas	default	id	default
 							hidden	false
 						after	
 						params	
-						sources	paradise:plugin/src/main/scala	paradise:plugin/src/main/scala
-						binaries	
+						sources	
+						binaries	org.scalamacros:paradise_2.12.8:2.1.1	binRepo	central
+								group	org.scalamacros
+								artifact	paradise_2.12.8
+								version	2.1.1
 						resources	
 						bloopSpec	None
 						environment	
@@ -208,16 +214,6 @@ schemas	default	id	default
 				repo	gh:typelevel/cats-effect
 				track	v2.0.0
 				commit	45553e1ccf95704544aae9af614a2d2c5477ca04
-				local	None
-			kind-projector	id	kind-projector
-				repo	gh:typelevel/kind-projector
-				track	v0.10.3
-				commit	b1e2e8375f755e4bbba61910a40ad640f7d0ff28
-				local	None
-			paradise	id	paradise
-				repo	gh:scalamacros/paradise
-				track	v2.1.0_2.12.8
-				commit	1d55f7b0902b35d55d6d1dfc94ae8680e622c4da
 				local	None
 			scala	id	scala
 				repo	gh:propensive/.scala
