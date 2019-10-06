@@ -87,7 +87,7 @@ schemas	default	id	default
 						environment	
 						properties	
 						policy	
-				main	Some	core
+				main	Some	kernel
 				license	unknown
 				description	
 				compiler	Some	projectId	scala
@@ -120,7 +120,10 @@ schemas	default	id	default
 				main	Some	core
 				license	unknown
 				description	
-				compiler	None
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
 			kind-projector	id	kind-projector
 				modules	plugin	id	plugin
 						kind	Plugin
@@ -204,7 +207,10 @@ schemas	default	id	default
 				main	Some	core
 				license	unknown
 				description	
-				compiler	None
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
 		repos	cats	id	cats
 				repo	gh:typelevel/cats
 				track	v2.0.0
@@ -227,6 +233,6 @@ schemas	default	id	default
 				local	None
 		imports	scala:scala-2.12.8	repo	scala
 				schema	scala-2.12.8
-		main	Some	cats
+		main	Some	simulacrum
 main	default
 aliases	
