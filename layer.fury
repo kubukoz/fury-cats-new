@@ -10,11 +10,7 @@ schemas	default	id	default
 							moduleId	compiler
 							intransitive	true
 							hidden	false
-						after	cats/core-boiler	projectId	cats
-								moduleId	core-boiler
-								intransitive	false
-								hidden	false
-							cats/kernel	projectId	cats
+						after	cats/kernel	projectId	cats
 								moduleId	kernel
 								intransitive	false
 								hidden	false
@@ -48,25 +44,7 @@ schemas	default	id	default
 							unchecked	unchecked
 						sources	cats:core/src/main/scala	cats:core/src/main/scala
 							cats:core/src/main/scala-2.12-	cats:core/src/main/scala-2.12-
-							shared:cats/cats	shared:cats/cats
-						binaries	
-						resources	
-						bloopSpec	None
-						environment	
-						properties	
-						policy	
-					core-boiler	id	core-boiler
-						kind	Application
-						main	Some	Boilerplate
-						plugin	None
-						manifest	
-						compiler	projectId	scala
-							moduleId	compiler
-							intransitive	true
-							hidden	false
-						after	
-						params	
-						sources	src/gen	src/gen
+							src/boilerplate/core	src/boilerplate/core
 						binaries	
 						resources	
 						bloopSpec	None
@@ -82,10 +60,7 @@ schemas	default	id	default
 							moduleId	compiler
 							intransitive	true
 							hidden	false
-						after	cats/kernel-boiler	projectId	cats
-								moduleId	kernel-boiler
-								intransitive	false
-								hidden	false
+						after	
 						params	Xfatal-warnings	Xfatal-warnings
 							Xfuture	Xfuture
 							Xlint:-unused,_	Xlint:-unused,_
@@ -105,25 +80,7 @@ schemas	default	id	default
 						sources	cats:kernel/src/main/scala	cats:kernel/src/main/scala
 							cats:kernel/src/main/scala-2.12	cats:kernel/src/main/scala-2.12
 							cats:kernel/src/main/scala-2.12-	cats:kernel/src/main/scala-2.12-
-							shared:cats/kernel	shared:cats/kernel
-						binaries	
-						resources	
-						bloopSpec	None
-						environment	
-						properties	
-						policy	
-					kernel-boiler	id	kernel-boiler
-						kind	Application
-						main	Some	KernelBoiler
-						plugin	None
-						manifest	
-						compiler	projectId	scala
-							moduleId	compiler
-							intransitive	true
-							hidden	false
-						after	
-						params	
-						sources	src/kernelgen	src/kernelgen
+							src/boilerplate/kernel	src/boilerplate/kernel
 						binaries	
 						resources	
 						bloopSpec	None
