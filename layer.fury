@@ -102,8 +102,8 @@ schemas	default	id	default
 							language:higherKinds	language:higherKinds
 							language:implicitConversions	language:implicitConversions
 							unchecked	unchecked
-						sources	cats/kernel/src/main/scala-2.12	cats/kernel/src/main/scala-2.12
-							cats:kernel/src/main/scala	cats:kernel/src/main/scala
+						sources	cats:kernel/src/main/scala	cats:kernel/src/main/scala
+							cats:kernel/src/main/scala-2.12	cats:kernel/src/main/scala-2.12
 							cats:kernel/src/main/scala-2.12-	cats:kernel/src/main/scala-2.12-
 							shared:cats/kernel	shared:cats/kernel
 						binaries	
