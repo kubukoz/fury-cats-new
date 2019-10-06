@@ -137,6 +137,33 @@ schemas	default	id	default
 						moduleId	compiler
 						intransitive	true
 						hidden	false
+			cats-effect	id	cats-effect
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	java
+							moduleId	compiler
+							intransitive	false
+							hidden	false
+						after	cats/core	projectId	cats
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	
+						sources	cats-effect:core/jvm/src/main/scala	cats-effect:core/jvm/src/main/scala
+							cats-effect:core/shared/src/main/scala	cats-effect:core/shared/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	None
 			kind-projector	id	kind-projector
 				modules	plugin	id	plugin
 						kind	Plugin
@@ -220,6 +247,11 @@ schemas	default	id	default
 				track	v2.0.0
 				commit	3fad9606fd6a74151ffd8d30ec64cd292e303e2c
 				local	None
+			cats-effect	id	cats-effect
+				repo	gh:typelevel/cats-effect
+				track	v2.0.0
+				commit	45553e1ccf95704544aae9af614a2d2c5477ca04
+				local	None
 			kind-projector	id	kind-projector
 				repo	gh:typelevel/kind-projector
 				track	v0.10.3
@@ -237,8 +269,8 @@ schemas	default	id	default
 				local	None
 			simulacrum	id	simulacrum
 				repo	gh:typelevel/simulacrum
-				track	v1.0.0
-				commit	92921539c5b7677e3f8841a6e1fbbb17dc3e98d3
+				track	v0.19.0
+				commit	66fb9044bfb5c1c0a54c1dd30df677baedb8f649
 				local	None
 		imports	scala:scala-2.12.8	repo	scala
 				schema	scala-2.12.8
