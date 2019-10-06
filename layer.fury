@@ -1,0 +1,247 @@
+version	3
+schemas	default	id	default
+		projects	cats	id	cats
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	cats/core-boiler	projectId	cats
+								moduleId	core-boiler
+								intransitive	false
+								hidden	false
+							cats/kernel	projectId	cats
+								moduleId	kernel
+								intransitive	false
+								hidden	false
+							kind-projector/plugin	projectId	kind-projector
+								moduleId	plugin
+								intransitive	false
+								hidden	false
+							macro-paradise/plugin	projectId	macro-paradise
+								moduleId	plugin
+								intransitive	false
+								hidden	false
+							simulacrum/core	projectId	simulacrum
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	Xfatal-warnings	Xfatal-warnings
+							Xfuture	Xfuture
+							Xlint:-unused,_	Xlint:-unused,_
+							Yno-adapted-args	Yno-adapted-args
+							Ypartial-unification	Ypartial-unification
+							Ywarn-dead-code	Ywarn-dead-code
+							Ywarn-numeric-widen	Ywarn-numeric-widen
+							Ywarn-unused:imports	Ywarn-unused:imports
+							Ywarn-value-discard	Ywarn-value-discard
+							deprecation	deprecation
+							feature	feature
+							language:existentials	language:existentials
+							language:experimental.macros	language:experimental.macros
+							language:higherKinds	language:higherKinds
+							language:implicitConversions	language:implicitConversions
+							unchecked	unchecked
+						sources	cats:core/src/main/scala-2.12-	cats:core/src/main/scala-2.12-
+							cats:core/src/main/scala/	cats:core/src/main/scala/
+							shared:cats/cats	shared:cats/cats
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+					core-boiler	id	core-boiler
+						kind	Application
+						main	Some	Boilerplate
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	
+						params	
+						sources	src/gen	src/gen
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+					kernel	id	kernel
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	cats/kernel-boiler	projectId	cats
+								moduleId	kernel-boiler
+								intransitive	false
+								hidden	false
+						params	Xfatal-warnings	Xfatal-warnings
+							Xfuture	Xfuture
+							Xlint:-unused,_	Xlint:-unused,_
+							Yno-adapted-args	Yno-adapted-args
+							Ypartial-unification	Ypartial-unification
+							Ywarn-dead-code	Ywarn-dead-code
+							Ywarn-numeric-widen	Ywarn-numeric-widen
+							Ywarn-unused:imports	Ywarn-unused:imports
+							Ywarn-value-discard	Ywarn-value-discard
+							deprecation	deprecation
+							feature	feature
+							language:existentials	language:existentials
+							language:experimental.macros	language:experimental.macros
+							language:higherKinds	language:higherKinds
+							language:implicitConversions	language:implicitConversions
+							unchecked	unchecked
+						sources	cats/kernel/src/main/scala-2.12	cats/kernel/src/main/scala-2.12
+							cats:kernel/src/main/scala	cats:kernel/src/main/scala
+							cats:kernel/src/main/scala-2.12-	cats:kernel/src/main/scala-2.12-
+							shared:cats/kernel	shared:cats/kernel
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+					kernel-boiler	id	kernel-boiler
+						kind	Application
+						main	Some	KernelBoiler
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	
+						params	
+						sources	src/kernelgen	src/kernelgen
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			kind-projector	id	kind-projector
+				modules	plugin	id	plugin
+						kind	Plugin
+						main	Some	d_m.KindProjector
+						plugin	Some	kind-projector
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	
+						params	
+						sources	kind-projector:src/main/scala	kind-projector:src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	plugin
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			macro-paradise	id	macro-paradise
+				modules	plugin	id	plugin
+						kind	Plugin
+						main	Some	org.scalamacros.paradise.Plugin
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	
+						params	
+						sources	paradise:plugin/src/main/scala	paradise:plugin/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	plugin
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			simulacrum	id	simulacrum
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	macro-paradise/plugin	projectId	macro-paradise
+								moduleId	plugin
+								intransitive	false
+								hidden	false
+						params	
+						sources	simulacrum:core/src/main/scala	simulacrum:core/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	None
+		repos	cats	id	cats
+				repo	gh:typelevel/cats
+				track	v2.0.0
+				commit	3fad9606fd6a74151ffd8d30ec64cd292e303e2c
+				local	None
+			kind-projector	id	kind-projector
+				repo	gh:typelevel/kind-projector
+				track	v0.10.3
+				commit	b1e2e8375f755e4bbba61910a40ad640f7d0ff28
+				local	None
+			paradise	id	paradise
+				repo	gh:scalamacros/paradise
+				track	v2.1.0_2.12.8
+				commit	1d55f7b0902b35d55d6d1dfc94ae8680e622c4da
+				local	None
+			scala	id	scala
+				repo	gh:propensive/.scala
+				track	master
+				commit	b5a210a5e2b9ba713753850037c3f6136466ccfc
+				local	None
+			simulacrum	id	simulacrum
+				repo	gh:typelevel/simulacrum
+				track	v1.0.0
+				commit	92921539c5b7677e3f8841a6e1fbbb17dc3e98d3
+				local	None
+		imports	scala:scala-2.12.8	repo	scala
+				schema	scala-2.12.8
+		main	Some	cats
+main	default
+aliases	
