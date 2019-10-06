@@ -143,15 +143,15 @@ schemas	default	id	default
 						main	None
 						plugin	None
 						manifest	
-						compiler	projectId	java
+						compiler	projectId	scala
 							moduleId	compiler
-							intransitive	false
+							intransitive	true
 							hidden	false
 						after	cats/core	projectId	cats
 								moduleId	core
 								intransitive	false
 								hidden	false
-						params	
+						params	Ypartial-unification	Ypartial-unification
 						sources	cats-effect:core/jvm/src/main/scala	cats-effect:core/jvm/src/main/scala
 							cats-effect:core/shared/src/main/scala	cats-effect:core/shared/src/main/scala
 						binaries	
