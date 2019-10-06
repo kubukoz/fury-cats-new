@@ -44,7 +44,7 @@ schemas	default	id	default
 							unchecked	unchecked
 						sources	cats:core/src/main/scala	cats:core/src/main/scala
 							cats:core/src/main/scala-2.12-	cats:core/src/main/scala-2.12-
-							src/boilerplate/core	src/boilerplate/core
+							fury-cats-gen:src/boilerplate/core	fury-cats-gen:src/boilerplate/core
 						binaries	
 						resources	
 						bloopSpec	None
@@ -104,7 +104,7 @@ schemas	default	id	default
 						sources	cats:kernel/src/main/scala	cats:kernel/src/main/scala
 							cats:kernel/src/main/scala-2.12	cats:kernel/src/main/scala-2.12
 							cats:kernel/src/main/scala-2.12-	cats:kernel/src/main/scala-2.12-
-							src/boilerplate/kernel	src/boilerplate/kernel
+							fury-cats-gen:src/boilerplate/kernel	fury-cats-gen:src/boilerplate/kernel
 						binaries	
 						resources	
 						bloopSpec	None
@@ -244,6 +244,11 @@ schemas	default	id	default
 				repo	gh:typelevel/cats-effect
 				track	v2.0.0
 				commit	45553e1ccf95704544aae9af614a2d2c5477ca04
+				local	None
+			fury-cats-gen	id	fury-cats-gen
+				repo	gh:kubukoz/fury-cats-gen
+				track	v2.0.0
+				commit	9adda091f62fd5adfda6a98d8be2f9e575bf2149
 				local	None
 			scala	id	scala
 				repo	gh:propensive/.scala
