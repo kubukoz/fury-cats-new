@@ -1,6 +1,35 @@
 version	3
 schemas	default	id	default
-		projects	cats	id	cats
+		projects	acyclic	id	acyclic
+				modules	core	id	core
+						kind	Plugin
+						main	Some	acyclic.plugin.RuntimePlugin
+						plugin	Some	acyclic
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	
+						params	
+						sources	
+						binaries	com.lihaoyi:acyclic_2.12:0.2.0	binRepo	central
+								group	com.lihaoyi
+								artifact	acyclic_2.12
+								version	0.2.0
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			cats	id	cats
 				modules	core	id	core
 						kind	Library
 						main	None
@@ -51,6 +80,27 @@ schemas	default	id	default
 						environment	
 						properties	
 						policy	
+					free	id	free
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	cats/core	projectId	cats
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	Ypartial-unification	Ypartial-unification
+						sources	cats:free/src/main/scala	cats:free/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
 					kernel	id	kernel
 						kind	Library
 						main	None
@@ -87,7 +137,7 @@ schemas	default	id	default
 						environment	
 						properties	
 						policy	
-				main	Some	core
+				main	Some	kernel
 				license	unknown
 				description	
 				compiler	Some	projectId	scala
@@ -108,7 +158,22 @@ schemas	default	id	default
 								moduleId	core
 								intransitive	false
 								hidden	false
+							kind-projector/plugin	projectId	kind-projector
+								moduleId	plugin
+								intransitive	false
+								hidden	false
+							macro-paradise/plugin	projectId	macro-paradise
+								moduleId	plugin
+								intransitive	false
+								hidden	false
+							simulacrum/core	projectId	simulacrum
+								moduleId	core
+								intransitive	false
+								hidden	false
 						params	Ypartial-unification	Ypartial-unification
+							feature	feature
+							language:higherKinds	language:higherKinds
+							language:implicitConversions	language:implicitConversions
 						sources	cats-effect:core/jvm/src/main/scala	cats-effect:core/jvm/src/main/scala
 							cats-effect:core/shared/src/main/scala	cats-effect:core/shared/src/main/scala
 						binaries	
@@ -120,7 +185,186 @@ schemas	default	id	default
 				main	Some	core
 				license	unknown
 				description	
-				compiler	None
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			cats-mtl	id	cats-mtl
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	cats/core	projectId	cats
+								moduleId	core
+								intransitive	false
+								hidden	false
+							kind-projector/plugin	projectId	kind-projector
+								moduleId	plugin
+								intransitive	false
+								hidden	false
+						params	Ypartial-unification	Ypartial-unification
+						sources	cats-mtl:core/src/main/scala	cats-mtl:core/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			console4cats	id	console4cats
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	cats-effect/core	projectId	cats-effect
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	Ypartial-unification	Ypartial-unification
+							feature	feature
+							language:higherKinds	language:higherKinds
+						sources	console4cats:core/src/main/scala	console4cats:core/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			diffx	id	diffx
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	acyclic/core	projectId	acyclic
+								moduleId	core
+								intransitive	false
+								hidden	false
+							magnolia/core	projectId	magnolia
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	feature	feature
+							language:experimental.macros	language:experimental.macros
+							language:higherKinds	language:higherKinds
+							language:implicitConversions	language:implicitConversions
+						sources	diffx:core/src/main/scala	diffx:core/src/main/scala
+							diffx:core/src/main/scala-2.13-	diffx:core/src/main/scala-2.13-
+							diffx:core/src/main/scala-common	diffx:core/src/main/scala-common
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			flawless	id	flawless
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	cats-effect/core	projectId	cats-effect
+								moduleId	core
+								intransitive	false
+								hidden	false
+							cats-mtl/core	projectId	cats-mtl
+								moduleId	core
+								intransitive	false
+								hidden	false
+							console4cats/core	projectId	console4cats
+								moduleId	core
+								intransitive	false
+								hidden	false
+							diffx/core	projectId	diffx
+								moduleId	core
+								intransitive	false
+								hidden	false
+							monocle/macros	projectId	monocle
+								moduleId	macros
+								intransitive	false
+								hidden	false
+						params	Ypartial-unification	Ypartial-unification
+							feature	feature
+							language:higherKinds	language:higherKinds
+						sources	flawless:core/src/main/scala	flawless:core/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+					tests	id	tests
+						kind	Application
+						main	Some	flawless.tests.FlawlessTests
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	flawless/core	projectId	flawless
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	feature	feature
+							language:higherKinds	language:higherKinds
+						sources	flawless:tests/src/main/scala	flawless:tests/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	java.lang.RuntimePermission shutdownHooks read,write	className	java.lang.RuntimePermission
+								target	shutdownHooks
+								action	Some	read,write
+							java.util.PropertyPermission cats.effect.fusionMaxStackDepth read	className	java.util.PropertyPermission
+								target	cats.effect.fusionMaxStackDepth
+								action	Some	read
+				main	Some	tests
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
 			kind-projector	id	kind-projector
 				modules	plugin	id	plugin
 						kind	Plugin
@@ -179,6 +423,123 @@ schemas	default	id	default
 						moduleId	compiler
 						intransitive	true
 						hidden	false
+			magnolia	id	magnolia
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	mercator/core	projectId	mercator
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	language:experimental.macros	language:experimental.macros
+						sources	magnolia:core/shared/src/main/scala	magnolia:core/shared/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			mercator	id	mercator
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	
+						params	
+						sources	mercator:core/shared/src/main/scala	mercator:core/shared/src/main/scala
+							mercator:core/shared/src/main/scala-2.12	mercator:core/shared/src/main/scala-2.12
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	core
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
+			monocle	id	monocle
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	cats/free	projectId	cats
+								moduleId	free
+								intransitive	false
+								hidden	false
+							kind-projector/plugin	projectId	kind-projector
+								moduleId	plugin
+								intransitive	false
+								hidden	false
+						params	feature	feature
+							language:higherKinds	language:higherKinds
+							language:implicitConversions	language:implicitConversions
+						sources	monocle:core/jvm/src/main/scala	monocle:core/jvm/src/main/scala
+							monocle:core/shared/src/main/scala	monocle:core/shared/src/main/scala
+							monocle:core/shared/src/main/scala-2.12-	monocle:core/shared/src/main/scala-2.12-
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+					macros	id	macros
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	monocle/core	projectId	monocle
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	Xfatal-warnings	Xfatal-warnings
+							feature	feature
+							language:experimental.macros	language:experimental.macros
+							language:implicitConversions	language:implicitConversions
+						sources	monocle:macro/src/main/scala	monocle:macro/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
+				main	Some	macros
+				license	unknown
+				description	
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
 			simulacrum	id	simulacrum
 				modules	core	id	core
 						kind	Library
@@ -204,7 +565,10 @@ schemas	default	id	default
 				main	Some	core
 				license	unknown
 				description	
-				compiler	None
+				compiler	Some	projectId	scala
+						moduleId	compiler
+						intransitive	true
+						hidden	false
 		repos	cats	id	cats
 				repo	gh:typelevel/cats
 				track	v2.0.0
@@ -214,6 +578,41 @@ schemas	default	id	default
 				repo	gh:typelevel/cats-effect
 				track	v2.0.0
 				commit	45553e1ccf95704544aae9af614a2d2c5477ca04
+				local	None
+			cats-mtl	id	cats-mtl
+				repo	gh:typelevel/cats-mtl
+				track	v0.7.0
+				commit	af95cfa9824df8eaec4ed15939b83cbd016696f5
+				local	None
+			console4cats	id	console4cats
+				repo	gh:profunktor/console4cats
+				track	0.8.0
+				commit	1d12ec4980fdecb62b614337b7fee0153c0702cd
+				local	None
+			diffx	id	diffx
+				repo	gh:softwaremill/diffx
+				track	v0.3.3
+				commit	cf98775c6fb5839b682a0282a03e38caabbc9a5d
+				local	None
+			flawless	id	flawless
+				repo	gh:kubukoz/flawless
+				track	neu
+				commit	8bf500b57cf4816019cb6b98e94e3606a3693bba
+				local	None
+			magnolia	id	magnolia
+				repo	gh:propensive/magnolia
+				track	v0.12.0
+				commit	a27d0a40a96f970285e243d4858117fccab05f4e
+				local	None
+			mercator	id	mercator
+				repo	gh:propensive/mercator
+				track	v0.2.1
+				commit	6b8c129765d8c26c648a8daff70caff42b7b6f61
+				local	None
+			monocle	id	monocle
+				repo	gh:julien-truffaut/monocle
+				track	v2.0.0
+				commit	94dfb513d26ed3566ba7374c534a22ed772b83b1
 				local	None
 			scala	id	scala
 				repo	gh:propensive/.scala
@@ -227,6 +626,6 @@ schemas	default	id	default
 				local	None
 		imports	scala:scala-2.12.8	repo	scala
 				schema	scala-2.12.8
-		main	Some	cats
+		main	Some	flawless
 main	default
 aliases	
