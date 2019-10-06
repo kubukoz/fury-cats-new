@@ -46,8 +46,8 @@ schemas	default	id	default
 							language:higherKinds	language:higherKinds
 							language:implicitConversions	language:implicitConversions
 							unchecked	unchecked
-						sources	cats:core/src/main/scala-2.12-	cats:core/src/main/scala-2.12-
-							cats:core/src/main/scala/	cats:core/src/main/scala/
+						sources	cats:core/src/main/scala	cats:core/src/main/scala
+							cats:core/src/main/scala-2.12-	cats:core/src/main/scala-2.12-
 							shared:cats/cats	shared:cats/cats
 						binaries	
 						resources	
