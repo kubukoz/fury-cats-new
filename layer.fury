@@ -51,6 +51,30 @@ schemas	default	id	default
 						environment	
 						properties	
 						policy	
+					free	id	free
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	cats/core	projectId	cats
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	Ypartial-unification	Ypartial-unification
+							feature	feature
+							language:existentials	language:existentials
+							language:higherKinds	language:higherKinds
+						sources	cats:free/src/main/scala	cats:free/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+						environment	
+						properties	
+						policy	
 					kernel	id	kernel
 						kind	Library
 						main	None
@@ -87,7 +111,7 @@ schemas	default	id	default
 						environment	
 						properties	
 						policy	
-				main	Some	kernel
+				main	Some	core
 				license	unknown
 				description	
 				compiler	Some	projectId	scala
@@ -233,6 +257,6 @@ schemas	default	id	default
 				local	None
 		imports	scala:scala-2.12.8	repo	scala
 				schema	scala-2.12.8
-		main	Some	simulacrum
+		main	Some	cats
 main	default
 aliases	
